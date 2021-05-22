@@ -1,2 +1,2 @@
-# mythical-checker
-a discord token checker that uses proxies
+# Mythical Checker
+A discord token checker that uses proxies
