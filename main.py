@@ -29,8 +29,7 @@ banner = f'''
 ██{b}║{w} {b}╚{w}{b}═{w}{b}╝{w} ██{b}║{w}   ██{b}║{w}      ██{b}║{w}   ██{b}║{w}  ██{b}║{w}██{b}║{w}{b}╚{w}██████{b}╗{w}██{b}║{w}  ██{b}║{w}███████{b}╗{w}
 {b}╚═╝     ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝{w}
                                                                 
-{m}Made by: sxvn#1337  {w}     
-                                                         '''
+{m}Made by: sxvn#1337  {w}                                                              '''
 current_path = os.path.dirname(os.path.realpath(__file__))
 url = "https://discordapp.com/api/v6/users/@me/library"
 count = 0
@@ -82,21 +81,19 @@ while True:
         }
         r = requests.get(url, headers=header, proxies={"http": proxy})
         if r.status_code == 200:
-            lmao = f"{g}[+] Valid Token{w}"
-            f = open(current_path+"/"+ tokens.txt)
+            lmao = u"\u001b[32;1m[+] Valid Token\u001b[0m"
+            f = open(current_path+"/"+tokens.txt)
             f.write(token+"\n")
         elif "rate limited." in r.text:
-            lmao = f"{r}[-] You are being rate limited{w}"
+            lmao = "\u001b[-] You are being rate limited\u001b[0m"
         else:
-            status = f"{r}[-] Invalid:{w}"
+            status = u"\u001b[31m[-] Invalid:\u001b[0m"
         
         print(status + " " + token)
         count = count + 1
         if count == 4:
-            sleep(0.3)
+            sleep(0.2)
             clear()
             print(banner)
             count = 0
         tokens.remove(token)
-
-        
